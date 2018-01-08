@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .column:first-of-type {float:left}
+      .column:last-of-type {float:right}
+      .license { font-size: 30% }
+
+      .split-40 .column:first-of-type {width: 50%}
+      .split-40 .column:last-of-type {width: 50%}
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Elektrotechnik und Elektronik Grundlagen:
+
+Keine Angst vor Strom
+
+---
+
+# Abgrenzung: Elektrotechnik
+
+Elektrotechnik umfasst viele Bereiche.
+
+Klassisch hauptsächlich Energietechnik und Antriebstechnik.
+
+Heute aber vor allem auch Elektronik, Nachrichtentechnik, Automatisierungstechnik, Gebäudetechnik und Gerätetechnik.
+
+
+---
+
+# Abgrenzung: Elektronik
+
+Klassisch war die Elektronik eher die Arbeit mit elektronischen, analogen und digitalen Schaltkreisen.
+
+Heute ist sie übergreifend in vielen Bereichen der Elektrotechnik enthalten.
+
+---
+
+# Schaltplankunde
+
+.center[![Reihenschaltung](reihen-parallel.svg)]
+
+.license[CC0 1.0 by Saure]
+
+* Beschriftung
+* Spannungsquelle
+* Widerstand
+
+---
+
+class: split-40
+
+# Strom, Ladung, Elektronen?
+
+* elektrischer Strom ist der Transport elektrischer Ladungssträger
+  * Stromstärke: `\(I[A] = \frac{Q[C]}{t[s]}\)`
+  * Ist für sich kein Äquivalent zu Leistung/Energie
+
+
+bedeutet:
+
+Bewegen sich Teilchen mit einer Ladung von 5 Coulomb in 10 Sekunden durch einen Leiter, so fließt ein Strom von `\(I = \frac{5\ C}{10\ s} = 0.5\ A\)`
+
+.column[
+![Reihenschaltung](reihen-parallel.svg)
+]
+.column[
+* Physikalisch gesehen bewegen sich Ladungsträger von - zu +
+* Strom fließt durch einen Leiter
+* Innerhalb eines unverzweigten Stroms ist die Stromstärke und Richtung überall gleich
+* In einem Knoten ist die Summe aller Ströme 0:
+  * `\(I_0 - I_1 - I_2 = 0 \Longleftrightarrow I_0 = I_1 + I_2\)`
+]
+---
+class: split-40
+
+# Spannung, Potenzial
+
+* elektrische Spannung ist die "Stärke" der Ladungsträger des Stromes
+  * Spannung: `\(U[V] = \frac{W[J]}{Q[C]}\)`
+  * Quasi der "Tritt in den Hintern der Ladungen"
+
+bedeutet:
+
+Haben die Teilchen mit der Ladung von 5 Coulomb die Fähigkeit, eine Arbeit von 10 Joule zu verrichten, so beträgt die Spannung `\(U = \frac{10\ J}{5\ C} = 2\ V\)`
+
+.column[
+![Reihenschaltung](reihen-parallel.svg)
+]
+.column[
+* Spannung "liegt zwischen Knoten im Schaltkreis an"
+* Wird in einem Schaltungselement Arbeit verrichtet, so verringert sich das Potential des Stromes
+  * Spannung fällt ab
+  * Man spricht von Potentialdifferenzen
+* Die Summe aller Spannungen in einer Masche ist 0:
+  * `\(U_0 + U_1 + U_2 = 0 \Longleftrightarrow U_0 = -U_1 -U_2\)`
+]
+
+---
+class: split-40
+
+# Ladung, Zeit, Arbeit, Spannung und Strom?
+
+... da gibts doch nen Zusammenhang!
+
+Der Widerstand bestimmt den Zusammenhang zwischen Spannung und Strom in jedem Teil des Schaltkreises:
+.column[
+$$ R[\Omega] = \frac{U[V]}{I[A]} $$
+$$ U[V] = R[\Omega] \cdot I[A] $$
+$$ I[A] = \frac{U[V]}{R[\Omega]} $$
+]
+.column[
+![](widerstand_strom_spannung.gif)
+
+.license[Quelle: https://www.elektronik-kompendium.de/sites/grd/0201113.htm]
+]
+
+---
+
+# Widerstand als Eigenschaft von Bauelementen
+
+elektrischer Widerstand eines Bauelementes hängt von physikalischen Eigenschaften ab:
+* Materialstärke
+  * Draht in verschiedenen Durchmessern
+* Material
+  * Leitfähigkeit
+* Temperatur
+  * Glühbirne
+  * Temperatursensor
+* Lichteinstrahlung
+  * Lichtabhängiger Widerstand
+
+... leider nicht bei modernen Bauelementen wie LEDs und komplexen Schaltungen wie "Handies", "Computer".
+
+---
+
+# Exkurs: Messen von Strom und Spannung
+
+![:scale 100%](VoltmeterSymbol.svg)
+
+.license[CC BY-SA 3.0 Raster by Robert J. Rademacher
+Vector by User:Booyabazooka]
+
+---
+
+# Das Steckbrett (Breadboard)
+
+![:scale 95%](breadboard-connections.png)
+
+.license[CC BY-SA 3.0 Andreas B Mundt]
+
+---
+
+# Die LED
+
+Light Emitting Diode
+
+![:scale 20%](leds.jpg)
+![:scale 25%](Ledwhitecharcurp.png)
+
+.license[links: CC BY-SA 3.0 Daniel Ryde, Skövde 2004-08-24]
+.license[rechts: CC BY-SA 2.5 https://de.wikipedia.org/wiki/Benutzer:Anton]
+
+![:scale 35%](led-fritzing.jpg)
+![:scale 35%](led-schaltplan.png)
+
+.license[links: http://www.kreativekiste.de]
+.license[rechts: http://www.kreativekiste.de]
+
+---
+# Vorwiderstand einer LED
+
+![:scale 25%](Ledwhitecharcurp.png)
+![:scale 35%](led-schaltplan.png)
+
+.license[links: CC BY-SA 2.5 https://de.wikipedia.org/wiki/Benutzer:Anton]
+.license[rechts: http://www.kreativekiste.de]
+
+* Kennlinie sehr steil, also kleine Spannungsänderung führt zu großer Stromänderung
+* stabiles Einstellen des Arbeitspunktes: Vorwiderstand erforderlich
+  * (Oder Betrieb mit Konstantstromquelle)
+
+`\(U_S = 12\ V\)`
+`\(U_f = 2\ V\)`
+`\(I = 0.02\ A\)`
+
+`\(R = \frac{U}{I} = \)`
+--
+`\( \frac{U_S - U_f}{I} = \frac{12\ V - 2\ V}{0.02\ A} = 500\ \Omega \)`
+
+---
+class: split-40
+# Reihen- und Parallelschaltung
+
+.column[
+![:scale 105%](reihen-parallel.svg)
+]
+.column[
+`\(U_0 = 12\ V\)`
+
+`\(R_1 = R_2 = 470\ \Omega\)`
+
+`\(U_1 = ?\ V\)`
+
+`\(U_2 = ?\ V\)`
+
+`\(R_{Ersatz} = ? \Omega\)`
+
+`\(I_1 = ?\ A\)`
+
+`\(I_2 = ?\ A\)`
+
+`\(I_0 = ?\ A\)`
+
+`\(R_{Ersatz} = ? \Omega\)`
+]
+
+---
+class: split-40
+# Reihen- und Parallelschaltung
+
+.column[
+![:scale 105%](reihen-parallel.svg)
+]
+.column[
+* Reihenschaltung
+  * Widerstände werden addiert `\(R_{ges} = R_1 + R_2\)`
+
+* Parallelschaltung
+  * Gesamtwiderstand ist kleiner als der kleinste Widerstand
+  * `\(R_{ges} = \frac{1}{\frac{1}{R_1} + \frac{1}{R_2}}\)`
+  * Spezialfall: Widerstände sind gleich groß, N Stück parallel `\(R_{ges} = \frac{R}{N}\)`
+]
+
+---
+# Der Spannungsteiler (Potentiometer)
+
+![](Potentiometer_with_load.svg)
+
+.license[CC BY-SA 3.0  Wikimedia DesbWit, Omegatron]
+
+`\(U_{R_L} = \frac{R_2 \cdot R_L}{R_1 \cdot R_L + R_2 \cdot R_L + R_1 \cdot R_2} \cdot U_S \Longleftrightarrow U_{R_L} = \frac{1}{1 + \frac{R_1}{R_2} + \frac{R_1 \cdot R_2}{R_2 \cdot R_L}} \cdot U_S\)`
+
+`\(\lim\limits_{R_L \to \infty} U_{R_L} = \frac{R_2}{R_1 + R_2} \cdot U_S\)`
+
+---
+# Wie sterbe ich durch Strom?
+
+Töten tut die Stromstärke, nicht die Spannung
+* Stromstärke ab ~25 mA (Wechselstrom) bzw. ~130 mA (Gleichstrom) kann Kammerflimmern auslösen
+
+Es gibt keine genauen Grenzwerte. Gefahr steigt bei
+* Implantaten
+* Herzschrittmachen
+* Frauen
+
+Schutzkleinspannung: Per Definition "sichere" Spannung
+* verschiedene Schutzklassen
+* z.B. 120V Gleichspannung, 50V Wechselspannung
+
+Sicher somit
+* Hohe Spannung, niedriger Strom (Feuerzeugpiezo)
+* Niedrige Spannung
+* Hohe Spannung, hoher Strom, extrem kurze Zeit (wenige Mikrosekunden)
+
+---
+class: split-40
+# Lebensretter: Fehlerstromschutzschalter
+
+* Auch RCD, oder RCCB (Residual Current operated Circuit-Breaker) oder älter, FI (Fehler-I, Fehler-Strom) Schutzschalter
+
+.column[
+![:scale 75%](rcd.JPG)
+
+.license[CC BY-SA 3.0 Wikimedia Dmitry G]
+]
+.column[
+* Löst aus, wenn herein- und herausfließender Strom sich nicht zu 0 addieren
+* Typischer Auslöse-Differenzstrom: 30 mA
+  * Vergleiche: Typischer Leitungsschutzschalter ("Sicherung"): 16000 mA
+]
+![:scale 60%](rcd-fault.png)
+
+.license[Unknown - https://diy.stackexchange.com/questions/81075/rcd-tripping-with-fault-on-live-wire-only/81077]
+---
+
+# Der Kondensator
+
+![:scale 50%](2000px-Plate_Capacitor_DE.svg.png)
+
+.license[CC BY-SA 3.0 Wikimedia Cepheiden]
+
+* Kapazität Formelzeichen: C
+* Einheit: F (Farad)
+* Zusammenhang: `\(C = \frac{Q[C]}{U[V]}\)`
+
+---
+
+# Kondensator: Lade- und Entladevorgang
+
+![](400px-Schaltung_Kondensator_Entladevorgang_Bsp2.png)
+
+.license[GNU Lizenz für freie Dokumentation, Wikibooks Benutzer Rfk]
+
+---
+
+# Der Gleichrichter
+![](Halfwave.rectifier.en.svg)
+
+.license[Public Domain, Wikimedia Petr.adamek]
+
+---
+
+# Der Transistor
+![:scale 50%](Bipolartransistor.svg)
+
+.license[GNU Free Documentation License, Cepheiden at wikimedia]
+
+* Basis, Kollektor und Emitter
+* NPN/PNP je nach Polarität
+  * NPN: Basis- und Kollektor haben höheres Potential in Bezug auf Emitter
+* Verstärker: kleiner Basis Strom führt zu großem Kollektorstrom
+---
+
+# Transistorgrundschaltung: Emitterschaltung
+
+![:scale 45%](Inverter.png)
+
+.license[GNU Free Documentation License, Wikipedia SteveK]
+
+* Verstärkungsfaktor: `\(\beta\)` oder `\(h_{FE}\)`
+* Kollektorstrom: `\(I_C = I_B \cdot \beta \)`
+
+---
+
+# Emitterschaltung mit Stromgegenkopplung
+![:scale 75%](Breitbandverstärker.GIF)
+
+.license[Public Domain, Herbertweidner at de.wikipedia]
+
+
+
+
+    </textarea>
+    <script src="http://gnab.github.io/remark/downloads/remark-latest.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML&delayStartupUntil=configured" type="text/javascript"></script>
+    <script type="text/javascript">
+      remark.macros.scale = function (percentage) {
+        var url = this;
+        return '<img src="' + url + '" style="width: ' + percentage + '" />';
+      };
+      var slideshow = remark.create();
+
+      // Setup MathJax
+      MathJax.Hub.Config({
+          tex2jax: {
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+          }
+      });
+
+      MathJax.Hub.Configured();
+    </script>
+  </body>
+</html>
